@@ -20,11 +20,7 @@ if api_key:
     
     if not df.empty:
         # Analyze sentiment
-        df["sentiment_score"] = df["title"].apply(analyze_sentiment)
-        df["sentiment_label"] = df["sentiment_score"].apply(
-            lambda x: "Positive" if x > 0.1 else "Negative" if x < -0.1 else "Neutral"
-        )
-
+        df["sentiment_label"] = df["title"].apply(analyze_sentiment)
         # Show Data Table
         st.subheader("🧠 Analyzed News Headlines")
         st.dataframe(df[["publishedAt", "source", "title", "sentiment_label"]])
