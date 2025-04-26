@@ -21,6 +21,9 @@ if api_key:
     if not df.empty:
         # Analyze sentiment
         df["sentiment_label"] = df["title"].apply(analyze_sentiment)
+
+
+
         # Show Data Table
         st.subheader("🧠 Analyzed News Headlines")
         st.dataframe(df[["publishedAt", "source", "title", "sentiment_label"]])
