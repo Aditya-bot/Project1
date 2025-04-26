@@ -4,8 +4,8 @@ import plotly.express as px
 from news_sentiment import fetch_news, analyze_sentiment
 
 # Streamlit Page Config
-st.set_page_config(page_title="📰 Market Sentiment Dashboard", layout="wide")
-st.title("📰 Real-Time News Sentiment Dashboard")
+st.set_page_config(page_title="Market Sentiment Dashboard", layout="wide")
+st.title("Real-Time News Sentiment Dashboard")
 
 # Get API key from user
 api_key = st.text_input("Enter your NewsAPI Key", type="password")
